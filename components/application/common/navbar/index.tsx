@@ -10,7 +10,7 @@ const pathnameMap = {
   },
   "projects": {
     title: "Projetos",
-    description: "Crie e gerencie muúltiplos projetos."
+    description: "Crie e gerencie múltiplos projetos."
   },
   "settings": {
     title: "Configurações",

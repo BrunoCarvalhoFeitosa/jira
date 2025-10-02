@@ -102,7 +102,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
                 {data.map((task) => (
                   <CarouselItem key={task.$id} className="md:basis-1/2">
                     <Link href={`/workspaces/${workspaceId}/tasks/${task.$id}`}>
-                      <Card className="p-4 shadow-none border-none bg-neutral-100 rounded-md">
+                      <Card className="p-4 h-full shadow-none border-none bg-neutral-100 rounded-md">
                         <CardContent className="px-0">
                           <div className="mb-2 flex flex-col">
                             <div className="flex justify-between items-center">
