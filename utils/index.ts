@@ -4,7 +4,7 @@ import { RiUser3Line, RiUser3Fill } from "react-icons/ri"
 
 export const applicationNavigationRoutes = [
   {
-    label: "Início",
+    label: "Dashboard",
     href: "",
     icon: GoHome,
     activeIcon: GoHomeFill

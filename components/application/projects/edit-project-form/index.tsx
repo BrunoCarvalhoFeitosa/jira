@@ -97,7 +97,7 @@ export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProp
             <div className="flex items-center gap-3 flex-1">
               <Button
                 variant="ghost"
-                className="p-0 flex justify-center items-center w-10 h-10 bg-neutral-100 rounded-full cursor-pointer"
+                className="p-0 flex justify-center items-center w-10 h-10 bg-neutral-100 dark:bg-[#1A1A1A] rounded-full cursor-pointer"
                 onClick={onCancel ? onCancel : () => router.push(`/workspaces/${initialValues.workspaceId}/projects/${initialValues.$id}`)}
               >
                 <HiArrowLongLeft className="w-5 h-5" />
@@ -135,7 +135,7 @@ export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProp
                                 </div>
                               ) : (
                                 <Avatar className="border rounded-md size-[50px]">
-                                  <AvatarFallback className="rounded-md bg-white">
+                                  <AvatarFallback className="rounded-md bg-white dark:bg-[#1A1A1A]">
                                     <ImageIcon className="size-[20px] text-neutral-300" />
                                   </AvatarFallback>
                                 </Avatar>
@@ -152,7 +152,7 @@ export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProp
                                 type="button"
                                 size="default"
                                 variant="ghost"
-                                className="gap-1 pr-6 h-10 justify-start text-base rounded-md hover:bg-red-500 text-black hover:text-white transition cursor-pointer"
+                                className="gap-1 pr-6 h-10 justify-start text-base rounded-md hover:bg-red-500 dark:hover:bg-red-500 text-black dark:text-white hover:text-white transition cursor-pointer"
                                 onClick={handleDelete}
                               >
                                 <Trash2Icon className="size-5" />
@@ -195,7 +195,7 @@ export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProp
                                 disabled={isPending}
                                 size="sm"
                                 variant="outline"
-                                className="w-full h-10 justify-start font-normal rounded-md hover:bg-white text-black transition cursor-pointer"
+                                className="w-full h-10 justify-start font-normal rounded-md hover:bg-white text-black dark:text-white transition cursor-pointer"
                                 onClick={() => inputRef.current?.click()}
                               >
                                 <ImageIcon className="w-5 h-5 text-neutral-300" />

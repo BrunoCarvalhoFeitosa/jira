@@ -10,7 +10,7 @@ interface KanbanCardProps {
 
 export const KanbanCard = ({ task }: KanbanCardProps) => {
   return (
-    <div className="p-2.5 mb-1.5 space-y-3 rounded shadow-sm bg-white cursor-grab">
+    <div className="p-2.5 mb-1.5 space-y-3 rounded shadow-sm bg-white dark:bg-[#242424] cursor-grab">
       <div className="flex justify-between items-center gap-x-2">
         <p className="text-sm line-clamp-1" title={task.name}>
           {task.name}

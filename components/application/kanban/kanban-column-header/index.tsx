@@ -36,10 +36,10 @@ export const KanbanColumnHeader = ({ board, taskCount }: KanbanColumnHeaderProps
     <div className="py-1.5 px-1 flex justify-between items-center min-w-[250px]">
       <div className="flex items-center gap-x-2">
         {icon}
-        <h2 className="text-base capitalize font-semibold">
+        <h2 className="m-0 text-base capitalize font-semibold">
           {snakeCaseToTitleCase(board)}
         </h2>
-        <div className="m-0 p-0 flex justify-center items-center size-5 bg-neutral-200 rounded text-xs font-black text-muted-foreground">
+        <div className="m-0 p-0 flex justify-center items-center size-5 bg-neutral-200 dark:bg-blue-600 rounded text-xs font-black text-muted-foreground dark:text-white">
           {taskCount}
         </div>
       </div>
