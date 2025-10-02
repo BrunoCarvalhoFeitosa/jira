@@ -39,7 +39,7 @@ export const Navbar = () => {
         <h1 className="text-xl font-semibold">
           {title}
         </h1>
-        <p className="text-gray-400">
+        <p className="text-muted-foreground">
           {description}
         </p>
       </div>

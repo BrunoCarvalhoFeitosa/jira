@@ -65,21 +65,21 @@ export const TaskList = ({ data, total }: TaskListProps) => {
   const { open: editTask } = useEditTaskModal()
 
   return (
-    <div className="mt-4 w-full flex flex-col gap-y-4 bg-neutral-50 border rounded-md">
+    <div className="mt-4 w-full flex flex-col gap-y-4 bg-neutral-50 dark:bg-transparent border rounded-md">
       <div className="p-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-x-1">
             <h2 className="m-0 font-semibold text-lg">
               Tarefas
             </h2>
-            <div className="flex justify-center items-center bg-neutral-200 rounded-md w-5 h-5 text-xs font-black text-muted-foreground">
+            <div className="flex justify-center items-center bg-neutral-200 dark:bg-blue-600 rounded-md w-5 h-5 text-xs font-black text-muted-foreground dark:text-white">
               {total}
             </div>
           </div>
           <div>
             <Button
               variant="ghost"
-              className="bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-700 transition cursor-pointer"
               onClick={createTask}
             >
               <PlusIcon className="size-5 text-white" />
@@ -102,7 +102,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
                 {data.map((task) => (
                   <CarouselItem key={task.$id} className="md:basis-1/2">
                     <Link href={`/workspaces/${workspaceId}/tasks/${task.$id}`}>
-                      <Card className="p-4 h-full shadow-none border-none bg-neutral-100 rounded-md">
+                      <Card className="p-4 h-full shadow-none border-none bg-neutral-100 dark:bg-[#1A1A1A] rounded-md">
                         <CardContent className="px-0">
                           <div className="mb-2 flex flex-col">
                             <div className="flex justify-between items-center">
@@ -118,7 +118,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
                               <div>
                                 <Button
                                   variant="ghost"
-                                  className="has-[>svg]:px-0 cursor-pointer"
+                                  className="has-[>svg]:px-0 hover:bg-transparent dark:hover:bg-transparent cursor-pointer"
                                   onClick={() => editTask(task.$id)}
                                 >
                                   <PencilIcon className="size-5" />
@@ -176,21 +176,21 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
   const { open: createTask } = useCreateProjectModal()
 
   return (
-    <div className="mt-[60px] w-full flex flex-col gap-y-4 bg-neutral-50 border rounded-md">
+    <div className="mt-[60px] w-full flex flex-col gap-y-4 bg-neutral-50 dark:bg-transparent border rounded-md">
       <div className="p-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-x-1">
             <h2 className="m-0 font-semibold text-lg">
               Projetos
             </h2>
-            <div className="flex justify-center items-center bg-neutral-200 rounded-md w-5 h-5 text-xs font-black text-muted-foreground">
+            <div className="flex justify-center items-center bg-neutral-200 dark:bg-blue-600 rounded-md w-5 h-5 text-xs font-black text-muted-foreground dark:text-white">
               {total}
             </div>
           </div>
           <div>
             <Button
               variant="ghost"
-              className="bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-700 transition cursor-pointer"
               onClick={createTask}
             >
               <PlusIcon className="size-5 text-white" />
@@ -212,7 +212,7 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
               <CarouselContent>
                 {data.map((project) => (
                   <CarouselItem key={project.$id} className="basis-1/2 lg:basis-1/3">
-                    <Card className="p-4 shadow-none border-none bg-neutral-100 rounded-md">
+                    <Card className="p-4 shadow-none border-none bg-neutral-100 dark:bg-[#1A1A1A] rounded-md">
                       <CardContent className="px-0">
                         <div className="mb-2 flex flex-col">
                           <div className="flex justify-between items-center">
@@ -229,7 +229,7 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
                             <div>
                               <Button
                                 variant="ghost"
-                                className="has-[>svg]:px-0 cursor-pointer"
+                                className="has-[>svg]:px-0 hover:bg-transparent dark:hover:bg-transparent cursor-pointer"
                                 onClick={() => router.push(`/workspaces/${workspaceId}/projects/${project.$id}/settings`)}
                               >
                                 <PencilIcon className="size-5" />
@@ -272,21 +272,21 @@ export const MemberList = ({ data, total }: MemberListProps) => {
   const workspaceId = useWorkspaceId()
 
   return (
-    <div className="mt-[60px] w-full flex flex-col gap-y-4 bg-neutral-50 border rounded-md">
+    <div className="mt-[60px] w-full flex flex-col gap-y-4 bg-neutral-50 dark:bg-transparent border rounded-md">
       <div className="p-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-x-1">
             <h2 className="m-0 font-semibold text-lg">
               Membros
             </h2>
-            <div className="flex justify-center items-center bg-neutral-200 rounded-md w-5 h-5 text-xs font-black text-muted-foreground">
+            <div className="flex justify-center items-center bg-neutral-200 dark:bg-blue-600 rounded-md w-5 h-5 text-xs font-black text-muted-foreground dark:text-white">
               {total}
             </div>
           </div>
           <div>
             <Button
               variant="ghost"
-              className="bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-700 transition cursor-pointer"
               onClick={() => router.push(`/workspaces/${workspaceId}/members`)}
             >
               <PlusIcon className="size-5 text-white" />
@@ -309,7 +309,7 @@ export const MemberList = ({ data, total }: MemberListProps) => {
                 {data.map((member) => (
                   <CarouselItem key={member.$id} className="basis-1/2 lg:basis-1/3">
                     <Link href={`/workspaces/${workspaceId}/members`}>
-                      <Card className="p-4 shadow-none border-none bg-neutral-100 rounded-md">
+                      <Card className="p-4 shadow-none border-none bg-neutral-100 dark:bg-[#1A1A1A] rounded-md">
                         <CardContent className="px-0">
                           <div className="mb-2 flex flex-col">
                             <div className="flex justify-between items-center gap-3">
@@ -324,7 +324,7 @@ export const MemberList = ({ data, total }: MemberListProps) => {
                               <div>
                                 <Button
                                   variant="ghost"
-                                  className="has-[>svg]:px-0 cursor-pointer"
+                                  className="has-[>svg]:px-0 hover:bg-transparent dark:hover:bg-transparent cursor-pointer"
                                   onClick={() => router.push(`/workspaces/${workspaceId}/members/${member.$id}/`)}
                                 >
                                   <PencilIcon className="size-5" />

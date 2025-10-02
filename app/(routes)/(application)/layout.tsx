@@ -19,7 +19,7 @@ const ApplicationLayout = ({ children }: ApplicationLayoutProps) => {
         <CreateTaskModal />
         <EditTaskModal />
         <div className="flex w-full h-full">
-          <div className="fixed top-0 left-0 hidden lg:block lg:w-[264px] h-full overflow-y-auto">
+          <div className="fixed top-0 left-0 hidden lg:block lg:w-[264px] h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-neutral-200 [&::-webkit-scrollbar-thumb]:rounded-full">
             <Sidebar />
           </div>
           <div className="lg:pl-[264px] w-full">

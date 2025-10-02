@@ -16,7 +16,7 @@ export const Logo = ({ squareWidth, squareHeight, iconSize, fontSize }: LogoProp
       <div className={cn(squareWidth, squareHeight, "flex justify-center items-center bg-blue-600 rounded-md")}>
         <SiJira className={cn(iconSize, "text-white")} />
       </div>
-      <span className={cn(fontSize ? fontSize : "text-lg", "font-semibold text-neutral-700")}>
+      <span className={cn(fontSize ? fontSize : "text-lg", "font-semibold text-neutral-700 dark:text-white")}>
         Jira
       </span>
     </Link>

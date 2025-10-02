@@ -18,7 +18,7 @@ const HomePage = () => {
         <CardsSection />
         <DownloadSection />
         <Footer />
-        <ThemeSwitch />
+        <ThemeSwitch context="root" />
       </main>
     </div>
   )

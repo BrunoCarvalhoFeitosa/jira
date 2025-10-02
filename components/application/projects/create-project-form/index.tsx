@@ -60,7 +60,7 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
   }
   
   return (
-    <Card className="relative p-6 w-full h-full border-none rounded-md shadow-none bg-neutral-50">
+    <Card className="relative p-6 w-full h-full border-none rounded-md shadow-none bg-neutral-50 dark:bg-[#111]">
       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] h-[130px]">
         <GridPattern />
       </div>
@@ -95,7 +95,7 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
                             </div>
                           ) : (
                             <Avatar className="border rounded-md size-[50px]">
-                              <AvatarFallback className="rounded-md bg-white">
+                              <AvatarFallback className="rounded-md bg-white dark:bg-[#1A1A1A]">
                                 <ImageIcon className="size-[20px] text-neutral-300" />
                               </AvatarFallback>
                             </Avatar>
@@ -133,7 +133,7 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
                                 }
                               }}
                             >
-                              <ImageIcon className="w-5 h-5 text-neutral-400" />
+                              <ImageIcon className="w-5 h-5 text-neutral-400 dark:text-white" />
                               Remover imagem
                             </Button>
                           ): (
@@ -142,7 +142,7 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
                               disabled={isPending}
                               size="sm"
                               variant="outline"
-                              className="w-full h-10 justify-start text-base font-normal rounded-md hover:bg-white text-black transition cursor-pointer"
+                              className="w-full h-10 justify-start text-base font-normal rounded-md hover:bg-white text-black dark:text-white transition cursor-pointer"
                               onClick={() => inputRef.current?.click()}
                             >
                               <ImageIcon className="w-5 h-5 text-neutral-300" />
@@ -195,7 +195,7 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
                 disabled={isPending}
                 type="submit"
                 variant="default"
-                className="lg:w-[240px] h-12 text-base rounded-md bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+                className="lg:w-[240px] h-12 text-base rounded-md bg-blue-600 hover:bg-blue-700 text-white transition cursor-pointer"
               >
                 Criar projeto
               </Button>

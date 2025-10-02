@@ -236,7 +236,7 @@ export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProp
                   disabled={isPending}
                   type="submit"
                   variant="default"
-                  className="md:w-[240px] h-10 text-base rounded-md bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+                  className="md:w-[240px] h-10 text-base rounded-md bg-blue-600 hover:bg-blue-700 text-white transition cursor-pointer"
                   onClick={onCancel}
                 >
                   Editar projeto

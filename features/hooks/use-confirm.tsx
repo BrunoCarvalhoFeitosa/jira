@@ -51,7 +51,7 @@ export const useConfirm = (
           </Button>
           <Button
             type="button"
-            className="w-full h-10 lg:w-44 bg-blue-600 hover:bg-blue-700 text-base cursor-pointer"
+            className="w-full h-10 lg:w-44 bg-blue-600 hover:bg-blue-700 text-base text-white cursor-pointer"
             onClick={handleConfirm}
           >
             Confirmar

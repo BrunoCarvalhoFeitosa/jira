@@ -82,13 +82,13 @@ export const TaskViewSwitcher = ({ hideProjectFilter }: TaskViewSwitcherProps) =
               className="flex-1 md:flex-none mt-2 lg:mt-0 md:ml-4 w-full md:w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
               onClick={() => open()}
             >
-              <PlusIcon />
+              <PlusIcon className="size-6 text-white" />
             </Button>
             <Button
               className="flex-1 md:flex-none mt-2 lg:mt-0 w-full md:w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
               onClick={toggleFilter}
             >
-              <TbFilterSearch className="size-6" />
+              <TbFilterSearch className="size-6 text-white" />
             </Button>
           </div>
         </div>

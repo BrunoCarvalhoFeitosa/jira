@@ -61,7 +61,7 @@ export const CreateTaskForm = ({ onCancel, projectOptions, memberOptions }: Crea
   }
   
   return (
-    <Card className="relative p-6 w-full h-full border-none rounded-md shadow-none bg-neutral-50">
+    <Card className="relative p-6 w-full h-full border-none rounded-md shadow-none bg-neutral-50 dark:bg-[#111]">
       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] h-[90px]">
         <GridPattern />
       </div>
@@ -252,7 +252,7 @@ export const CreateTaskForm = ({ onCancel, projectOptions, memberOptions }: Crea
                 disabled={isPending}
                 type="submit"
                 variant="default"
-                className="lg:w-[240px] h-12 text-base rounded-md bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+                className="lg:w-[240px] h-12 text-base rounded-md bg-blue-600 hover:bg-blue-700 text-white transition cursor-pointer"
               >
                 Criar nova tarefa
               </Button>

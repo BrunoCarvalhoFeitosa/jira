@@ -197,7 +197,7 @@ export function PlaceholdersAndVanishInput({
   return (
     <form
       className={cn(
-        "w-0 h-0 bg-white dark:bg-zinc-800 rounded-md overflow-hidden transition-all duration-100",
+        "w-0 h-0 bg-white dark:bg-zinc-900 rounded-md overflow-hidden transition-all duration-100",
         value && "bg-gray-50",
         isFilterVisible && "w-full h-11 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)]"
       )}
@@ -230,7 +230,7 @@ export function PlaceholdersAndVanishInput({
         disabled={!value}
         type="submit"
         className={cn(
-          "hidden absolute right-1 top-1/2 z-50 -translate-y-1/2 size-9 rounded-md disabled:bg-gray-100 bg-blue-600 hover:bg-blue-700 dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 items-center justify-center cursor-pointer",
+          "hidden absolute right-1 top-1/2 z-50 -translate-y-1/2 size-9 rounded-md disabled:bg-gray-100 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:disabled:bg-zinc-800 transition duration-200 items-center justify-center cursor-pointer",
           isFilterVisible && "flex"
         )}
       >
@@ -275,7 +275,7 @@ export function PlaceholdersAndVanishInput({
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -15, opacity: 0 }}
               transition={{ duration: 0.3, ease: "linear" }}
-              className="dark:text-zinc-500 text-sm sm:text-base font-normal text-neutral-500 pl-4 sm:pl-9 text-left w-[calc(100%-2rem)] truncate"
+              className="dark:text-white text-sm sm:text-base font-normal text-neutral-500 pl-4 sm:pl-9 text-left w-[calc(100%-2rem)] truncate"
             >
               {placeholders[currentPlaceholder]}
             </motion.p>

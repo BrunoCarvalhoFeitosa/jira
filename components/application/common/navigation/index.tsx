@@ -22,11 +22,11 @@ export const Navigation = () => {
               <Link
                 href={fullHref}
                 className={cn(
-                  "relative px-1.5 h-10 flex items-center gap-2.5 font-medium rounded-md text-neutral-500 hover:text-primary transition-all duration-150",
-                  isActive && "text-primary bg-white shadow-sm hover:opacity-100 rounded-md rounded-tr-none rounded-br-none before:block before:absolute before:right-0 before:w-[5px] before:h-full before:bg-blue-600"
+                  "relative px-1.5 h-10 flex items-center gap-2.5 font-medium rounded-md text-neutral-500 dark:text-white hover:text-primary transition-all duration-150",
+                  isActive && "text-primary bg-white dark:bg-[#333] shadow-sm hover:opacity-100 rounded-md rounded-tr-none rounded-br-none before:block before:absolute before:right-0 before:w-[5px] before:h-full before:bg-blue-600"
                 )}
               >
-                <Icon className="size-5 text-neutral-500" />
+                <Icon className="size-5 text-neutral-500 dark:text-white" />
                 {item.label}
               </Link>
             </li>

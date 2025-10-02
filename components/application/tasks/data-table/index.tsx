@@ -46,7 +46,7 @@ export const DataTable = <TData, TValue>({ columns, data }: DataTableProps<TData
           <div className="relative flex items-center w-full">
             {isFilterVisible && (
               <div className="absolute top-2/4 -translate-y-2/4 left-2">
-                <TbFilterSearch className="size-5 text-muted-foreground" />
+                <TbFilterSearch className="size-5 text-muted-foreground dark:text-white" />
               </div>
             )}
             <PlaceholdersAndVanishInput
@@ -58,17 +58,6 @@ export const DataTable = <TData, TValue>({ columns, data }: DataTableProps<TData
                 table.getColumn("name")?.setFilterValue(input.value)
               }}
             />
-            {/* <Input
-              className={cn(
-                "p-0 w-0 h-10 border-transparent shadow-none focus-visible:ring-0 focus-visible:border-neutral-200 focus:active:outline-none placeholder:text-base placeholder:text-muted-foreground md:text-base transition-all duration-300",
-                isFilterVisible && "p-2 pl-8 w-full md:w-full border border-neutral-200"
-              )}
-              placeholder="Digite alguma palavra-chave para filtrar..."
-              value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-              onChange={(event) =>
-                table.getColumn("name")?.setFilterValue(event.target.value)
-              }
-            /> */}
           </div>
         </div>
       </div>

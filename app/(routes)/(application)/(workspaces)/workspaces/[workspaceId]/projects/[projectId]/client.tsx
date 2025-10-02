@@ -43,7 +43,7 @@ const ProjectIdClient = () => {
           <Button
             asChild
             type="button"
-            className="md:w-[150px] h-10 text-base bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+            className="md:w-[150px] h-10 text-base bg-blue-600 hover:bg-blue-700 text-white transition cursor-pointer"
           >
             <Link
               href={`/workspaces/${project.workspaceId}/projects/${project.$id}/settings`}
@@ -54,10 +54,10 @@ const ProjectIdClient = () => {
           </Button>
         </div>
       </div>
-      {analytics ? (
+      {analytics && (
         <Analytics data={analytics} />
-      ) : null }
-      <TaskViewSwitcher hideProjectFilter />
+      )}
+      <TaskViewSwitcher />
     </div>
   )
 }

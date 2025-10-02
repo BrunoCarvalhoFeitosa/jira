@@ -49,7 +49,7 @@ export const MembersList = () => {
   }
 
   return (
-    <Card className="relative p-6 w-full h-full border-none shadow-none rounded-md bg-neutral-50">
+    <Card className="relative p-6 w-full h-full border-none shadow-none rounded-md bg-neutral-50 dark:bg-[#111]">
       <ConfirmDialog />
       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] h-[110px]">
         <GridPattern />
@@ -59,7 +59,7 @@ export const MembersList = () => {
           <div className="w-full flex items-center gap-3 flex-1">
             <Button
               variant="ghost"
-              className="p-0 flex justify-center items-center w-10 h-10 bg-neutral-100 rounded-full cursor-pointer"
+              className="p-0 flex justify-center items-center w-10 h-10 bg-neutral-100 dark:bg-[#1A1A1A] rounded-full cursor-pointer"
               onClick={() => router.back()}
             >
               <HiArrowLongLeft className="w-5 h-5" />

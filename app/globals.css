@@ -118,7 +118,7 @@
   }
 
   body {
-    @apply bg-background text-foreground selection:bg-black/50 selection:text-white [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-neutral-200 [&::-webkit-scrollbar-thumb]:rounded-full;
+    @apply bg-background text-foreground selection:bg-black/70 selection:text-white [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-neutral-200 [&::-webkit-scrollbar-thumb]:rounded-full;
   }
 
   [data-sonner-toast][data-mounted=true][data-expanded=true] {

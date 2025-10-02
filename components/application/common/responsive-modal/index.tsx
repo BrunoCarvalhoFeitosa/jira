@@ -23,7 +23,7 @@ export const ResponsiveModal = ({ children, open, onOpenChange }: ResponsiveModa
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
-      <DrawerContent className="overflow-y-auto hide-scrollbar">
+      <DrawerContent className="overflow-y-auto hide-scrollbar dark:bg-transparent">
         <div>
           {children}
         </div>

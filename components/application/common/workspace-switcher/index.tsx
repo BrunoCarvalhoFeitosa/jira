@@ -19,13 +19,13 @@ export const WorkspaceSwitcher = () => {
 
   return (
     <div className="mt-12 pb-8 pr-4 flex flex-col gap-y-2 border-b">
-      <div className="flex justify-between items-center">
-        <h2 className="text-sm uppercase font-semibold text-neutral-500">
+      <div className="mb-3 flex justify-between items-center">
+        <h2 className="m-0 text-sm uppercase font-semibold text-neutral-500 dark:text-white">
           Espaços de trabalho
         </h2>
         <RiAddCircleFill
           onClick={open}
-          className="size-5 text-neutral-500 cursor-pointer"
+          className="size-5 text-neutral-500 dark:text-white cursor-pointer"
         />
       </div>
       {workspaces && workspaces?.total >= 1 && (

@@ -129,13 +129,13 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] h-[130px]">
         <GridPattern />
       </div>
-      <Card className="p-6 w-full h-full border-none rounded-md shadow-none bg-gray-50">
+      <Card className="p-6 w-full h-full border-none rounded-md shadow-none bg-gray-50 dark:bg-[#111]">
         <CardHeader className="relative px-0 flex z-10">
           <div className="w-full flex justify-between items-center">
             <div className="flex items-center gap-3 flex-1">
               <Button
                 variant="ghost"
-                className="p-0 flex justify-center items-center w-10 h-10 bg-neutral-100 rounded-full cursor-pointer"
+                className="p-0 flex justify-center items-center w-10 h-10 bg-neutral-100 dark:bg-[#1A1A1A] rounded-full cursor-pointer"
                 onClick={onCancel ? onCancel : () => router.push(`/workspaces/${initialValues.$id}`)}
               >
                 <HiArrowLongLeft className="w-5 h-5" />
@@ -190,10 +190,10 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                                 type="button"
                                 size="default"
                                 variant="ghost"
-                                className="gap-1 pr-6 h-10 justify-start text-base rounded-md hover:bg-red-500 text-black hover:text-white transition cursor-pointer"
+                                className="gap-1 pr-6 h-10 justify-start text-base rounded-md hover:bg-red-500 dark:hover:bg-red-500 text-black hover:text-white transition cursor-pointer"
                                 onClick={handleDelete}
                               >
-                                <Trash2Icon className="size-5" />
+                                <Trash2Icon className="size-5 dark:text-white" />
                               </Button>
                             </div>
                           </div>
@@ -215,7 +215,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                                 type="button"
                                 size="sm"
                                 variant="outline"
-                                className="w-full h-10 justify-start font-normal rounded-md hover:bg-white text-black transition cursor-pointer"
+                                className="w-full h-10 justify-start font-normal rounded-md hover:bg-white text-black dark:text-white transition cursor-pointer"
                                 onClick={() => {
                                   field.onChange(null)
 
@@ -286,7 +286,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                   disabled={isPending}
                   type="submit"
                   variant="default"
-                  className="md:w-[240px] h-10 text-base rounded-md bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+                  className="md:w-[240px] h-10 text-base rounded-md bg-blue-600 hover:bg-blue-700 text-white transition cursor-pointer"
                   onClick={onCancel}
                 >
                   Editar espaço de trabalho
@@ -296,7 +296,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
           </Form>
         </CardContent>
       </Card>
-      <Card className="relative p-6 w-full h-full border-none rounded-md shadow-none bg-gray-50">
+      <Card className="relative p-6 w-full h-full border-none rounded-md shadow-none bg-gray-50 dark:bg-[#111]">
         <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] h-[80px]">
           <GridPattern />
         </div>
@@ -304,7 +304,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
           <CardTitle className="text-xl font-semibold">
             Convide membros
           </CardTitle>
-          <CardDescription className="text-base">
+          <CardDescription className="text-base dark:text-white">
             Use este link para convidar novos membros a este espaço de trabalho.
           </CardDescription>
         </CardHeader>
@@ -313,7 +313,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
             <Input
               disabled
               value={fullInviteLink}
-              className="pr-12 h-10 bg-white focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300 truncate"
+              className="pr-12 h-10 bg-white dark:opacity-100 focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300 truncate"
             />
             <Button
               type="button"
@@ -329,7 +329,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
               disabled={isPending || isResettingInviteCode}
               type="button"
               variant="default"
-              className="md:w-[240px] h-10 text-base rounded-md bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+              className="md:w-[240px] h-10 text-base rounded-md bg-blue-600 hover:bg-blue-700 text-white transition cursor-pointer"
               onClick={handleResetInviteCode}
             >
               Resetar link de convite
