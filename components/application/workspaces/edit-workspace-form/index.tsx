@@ -249,7 +249,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                                 type="button"
                                 size="sm"
                                 variant="outline"
-                                className="w-full h-10 justify-start font-normal rounded-md hover:bg-white text-black dark:text-white transition cursor-pointer"
+                                className="w-full h-10 justify-start text-base font-normal rounded-md hover:bg-white text-black dark:text-white transition cursor-pointer"
                                 onClick={() => {
                                   field.onChange(null)
 
@@ -294,7 +294,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                           <Input
                             {...field}
                             placeholder="Insira o nome do espaço de trabalho"
-                            className="pl-9 h-10 text-lg bg-white focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300"
+                            className="pl-9 h-10 text-base bg-white focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300"
                           />
                         </div>
                       </FormControl>

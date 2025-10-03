@@ -121,7 +121,7 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
                               disabled={isPending}
                               size="sm"
                               variant="outline"
-                              className="w-full h-10 justify-start font-normal rounded-md hover:bg-white text-black transition cursor-pointer"
+                              className="w-full h-10 justify-start text-base font-normal rounded-md hover:bg-white text-black transition cursor-pointer"
                               onClick={() => {
                                 field.onChange(null)
 
