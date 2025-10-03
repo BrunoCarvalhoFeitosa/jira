@@ -205,7 +205,7 @@ export function PlaceholdersAndVanishInput({
     >
       <canvas
         className={cn(
-          "absolute pointer-events-none text-base transform scale-50 top-[20%] left-2 sm:left-8 origin-top-left filter invert dark:invert-0 pr-20",
+          "absolute pointer-events-none text-base transform scale-50 top-[20%] left-2 sm:left-8 origin-top-left filter invert dark:invert-0 pr-28 md:pr-20",
           !animating ? "opacity-0" : "opacity-100"
         )}
         ref={canvasRef}
@@ -222,7 +222,7 @@ export function PlaceholdersAndVanishInput({
         value={value}
         type="text"
         className={cn(
-          "w-full relative text-sm sm:text-base border-none dark:text-white bg-transparent text-black h-full rounded-md focus:outline-none focus:ring-0 pl-4 sm:pl-9 pr-20 z-50",
+          "w-full relative text-sm sm:text-base border-none dark:text-white bg-transparent text-black h-full rounded-md focus:outline-none focus:ring-0 pl-8 sm:pl-9 pr-28 md:pr-20 z-50",
           animating && "text-transparent dark:text-transparent"
         )}
       />
@@ -275,7 +275,7 @@ export function PlaceholdersAndVanishInput({
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -15, opacity: 0 }}
               transition={{ duration: 0.3, ease: "linear" }}
-              className="dark:text-white text-sm sm:text-base font-normal text-neutral-500 pl-4 sm:pl-9 text-left w-[calc(100%-2rem)] truncate"
+              className="dark:text-white text-[14.5px] sm:text-base font-normal text-neutral-500 pl-8 sm:pl-9 text-left w-[calc(100%-2rem)] truncate"
             >
               {placeholders[currentPlaceholder]}
             </motion.p>

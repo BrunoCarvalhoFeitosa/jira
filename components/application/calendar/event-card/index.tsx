@@ -46,16 +46,17 @@ export const EventCard = ({ title, assignee, project, status, id }: EventCardPro
         <p title={title} className="text-xs text-primary truncate">
           {title}
         </p>
-        <div className="flex items-center gap-x-1">
+        <div className="flex flex-col md:flex-row items-center gap-y-1 md:gap-x-1">
           <MemberAvatar
             name={assignee?.name}
-            className="size-5 cursor-pointer"
+            className="size-3 md:size-5 cursor-pointer"
+            fallbackClassName="text-xs"
             isTooltip
           />
           <ProjectAvatar
             name={project?.name}
             image={project?.imageUrl}
-            className="size-5 text-xs! cursor-pointer"
+            className="size-3 md:size-5 text-xs! cursor-pointer"
             fallbackClassName="text-xs!"
             isTooltip
           />

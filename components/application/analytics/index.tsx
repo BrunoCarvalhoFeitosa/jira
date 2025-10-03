@@ -1,5 +1,5 @@
 "use client"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { AnalyticsCard } from "./analytics-card"
 import { ProjectAnalyticsResponseType } from "@/features/projects/api/use-get-project-analytics"
 
@@ -9,7 +9,7 @@ export const Analytics = ({ data }: ProjectAnalyticsResponseType) => {
   }
 
   return (
-    <ScrollArea className="p-6 w-full max-w-full max-h-[300px] border rounded-md overflow-hidden">
+    <ScrollArea className="p-6 w-full max-w-full max-h-[300px] border rounded-md">
       <div className="flex space-x-6">
         <div className="flex-none w-52 border-r">
           <AnalyticsCard
@@ -44,7 +44,7 @@ export const Analytics = ({ data }: ProjectAnalyticsResponseType) => {
           />
         </div>
       </div>
-      <ScrollBar orientation="horizontal" />
+      {/* <ScrollBar orientation="horizontal" /> */}
     </ScrollArea>
   )
 }

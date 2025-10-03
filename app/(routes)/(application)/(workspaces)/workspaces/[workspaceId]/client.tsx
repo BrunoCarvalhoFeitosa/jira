@@ -211,7 +211,7 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
             >
               <CarouselContent>
                 {data.map((project) => (
-                  <CarouselItem key={project.$id} className="basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={project.$id} className="md:basis-1/2 lg:basis-1/3">
                     <Card className="p-4 shadow-none border-none bg-neutral-100 dark:bg-[#1A1A1A] rounded-md">
                       <CardContent className="px-0">
                         <div className="mb-2 flex flex-col">
@@ -307,7 +307,7 @@ export const MemberList = ({ data, total }: MemberListProps) => {
             >
               <CarouselContent>
                 {data.map((member) => (
-                  <CarouselItem key={member.$id} className="basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={member.$id} className="md:basis-1/2 lg:basis-1/3">
                     <Link href={`/workspaces/${workspaceId}/members`}>
                       <Card className="p-4 shadow-none border-none bg-neutral-100 dark:bg-[#1A1A1A] rounded-md">
                         <CardContent className="px-0">
