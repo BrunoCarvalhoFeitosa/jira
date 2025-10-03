@@ -24,3 +24,20 @@ export const updateWorkspaceSchema = z.object({
     z.string().transform((value) => value === "" ? undefined : value)
   ]).optional()
 })
+
+export const inviteSchema = z.object({
+  projectName: z
+    .string()
+    .trim()
+    .min(1, "Este campo é obrigatório."),
+
+  inviteLink: z
+    .string()
+    .trim()
+    .min(1, "Este campo é obrigatório."),
+
+  email: z
+    .string()
+    .min(1, { message: "Este campo é obrigatório." })
+    .email("O e-mail fornecido não é válido."),
+})

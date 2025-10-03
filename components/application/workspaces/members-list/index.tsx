@@ -98,7 +98,7 @@ export const MembersList = () => {
                       <MoreVerticalIcon />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent side="bottom" align="end">
+                  <DropdownMenuContent className="flex flex-col gap-y-1" side="bottom" align="end">
                     <DropdownMenuItem
                       disabled={isUpdatingMember}
                       className="font-semibold"
@@ -115,7 +115,7 @@ export const MembersList = () => {
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       disabled={isDeletingMember}
-                      className="font-semibold text-red-500"
+                      className="font-semibold text-red-500 hover:text-red-600 dark:hover:text-red-600"
                       onClick={() => handleDeleteMember(member.$id)}
                     >
                       Remover {member.name.split(" ")[0]}

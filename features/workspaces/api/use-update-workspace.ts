@@ -44,7 +44,7 @@ export const useUpdateWorkspace = () => {
       queryClient.invalidateQueries({ queryKey: ["workspace", data.$id] })
     },
     onError: () => {
-      toast.error('Oops, erro ao criar espaço de trabalho.', {
+      toast.error("Oops, erro ao criar espaço de trabalho.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

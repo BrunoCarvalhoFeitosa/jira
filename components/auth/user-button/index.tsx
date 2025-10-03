@@ -6,7 +6,6 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { RiLoader4Fill } from "react-icons/ri"
 import { IoIosLogOut } from "react-icons/io"
-import { ThemeSwitch } from "@/components/root/theme-switch"
 
 export const UserButton = () => {
   const { mutate: logout } = useLogout()
@@ -34,16 +33,15 @@ export const UserButton = () => {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger className="relative outline-none cursor-pointer">
         <Avatar className="size-10 hover:opacity-75 transition border border-neutral-300 dark:border-[#666]">
-          <AvatarFallback className="flex justify-center items-center font-medium text-neutral-500 bg-neutral-100 dark:bg-[#2A2A2A]">
+          <AvatarFallback className="flex justify-center items-center font-medium text-neutral-500 bg-neutral-100 dark:bg-white">
             {avatarFallback}
           </AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" side="bottom" className="w-60" sideOffset={10}>
-        <ThemeSwitch context="application" />
-        <div className="pb-4 px-2.5 flex flex-col justify-center items-center gap-2">
+        <div className="py-4 px-2.5 flex flex-col justify-center items-center gap-2">
           <Avatar className="size-[52px] hover:opacity-75 transition border border-neutral-300 dark:border-[#666">
-            <AvatarFallback className="flex justify-center items-center font-medium text-neutral-500 bg-neutral-100 dark:bg-[#2A2A2A]">
+            <AvatarFallback className="flex justify-center items-center font-medium text-neutral-500 bg-neutral-100 dark:bg-white">
               {avatarFallback}
             </AvatarFallback>
           </Avatar>

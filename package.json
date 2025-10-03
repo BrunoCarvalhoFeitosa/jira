@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hello-pangea/dnd": "^18.0.1",
     "@hono/zod-validator": "^0.7.3",
     "@hookform/resolvers": "^5.2.2",
@@ -44,6 +45,7 @@
     "quill": "^2.0.3",
     "react": "19.1.0",
     "react-big-calendar": "^1.19.4",
+    "react-countup": "^6.5.3",
     "react-day-picker": "^9.11.0",
     "react-dom": "19.1.0",
     "react-dropzone": "^14.3.8",

@@ -9,13 +9,13 @@ import { AiFillAndroid } from "react-icons/ai"
 
 export const DownloadSection = () => {
   return (
-    <div className="w-full flex flex-col overflow-hidden bg-blue-600 dark:bg-[#353535]">
+    <section className="w-full flex flex-col overflow-hidden bg-blue-600 dark:bg-[#353535]">
       <ContainerScroll
         titleComponent={
           <>
-            <h4 className="mb-4 text-md md:text-2xl font-semibold text-white">
+            <h4 className="mb-4 text-md md:text-3xl font-thin text-white">
               Faça o download e descubra o poder da <br />
-              <span className="text-[26px] md:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem] font-bold mt-1 leading-none">
+              <span className="text-[22px] md:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem] font-bold mt-1 leading-none">
                 Melhor ferramenta de gestão
               </span>
             </h4>
@@ -97,6 +97,6 @@ export const DownloadSection = () => {
           </div>
       </div>
       </ContainerScroll>
-    </div>
+    </section>
   )
 }

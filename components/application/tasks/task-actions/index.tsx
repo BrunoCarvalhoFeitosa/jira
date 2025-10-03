@@ -76,7 +76,7 @@ export const TaskActions = ({ id, projectId, children }: TaskActionsProps) => {
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled={isDeleting}
-            className="p-[10px] flex items-center gap-x-2 font-semibold text-red-600 hover:text-red-600!"
+            className="p-[10px] flex items-center gap-x-2 font-semibold text-red-600 hover:text-red-600! hover:bg-red-600/30!"
             onClick={onDeleteTask}
           >
             <Trash2Icon className="size-4 stroke-2 text-red-600" />

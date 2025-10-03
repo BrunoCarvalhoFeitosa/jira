@@ -72,7 +72,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
             <h2 className="m-0 font-semibold text-lg">
               Tarefas
             </h2>
-            <div className="flex justify-center items-center bg-neutral-200 dark:bg-blue-600 rounded-md w-5 h-5 text-xs font-black text-muted-foreground dark:text-white">
+            <div className="size-5 flex justify-center items-center rounded-full font-sans text-[11px] font-extrabold bg-neutral-200 dark:bg-blue-600 border border-neutral-400 dark:border-none">
               {total}
             </div>
           </div>
@@ -139,7 +139,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
                         </CardContent>
                         <CardFooter className="p-0 border-t [.border-t]:pt-3">
                           <p>
-                            Deverá ser entregue em {format(task.dueDate, "dd/MM/yyyy", { locale: ptBR })}
+                            Deverá ser entregue até {format(task.dueDate, "dd/MM/yyyy", { locale: ptBR })}
                           </p>
                         </CardFooter>
                       </Card>
@@ -183,7 +183,7 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
             <h2 className="m-0 font-semibold text-lg">
               Projetos
             </h2>
-            <div className="flex justify-center items-center bg-neutral-200 dark:bg-blue-600 rounded-md w-5 h-5 text-xs font-black text-muted-foreground dark:text-white">
+            <div className="size-5 flex justify-center items-center rounded-full font-sans text-[11px] font-extrabold bg-neutral-200 dark:bg-blue-600 border border-neutral-400 dark:border-none">
               {total}
             </div>
           </div>
@@ -279,7 +279,7 @@ export const MemberList = ({ data, total }: MemberListProps) => {
             <h2 className="m-0 font-semibold text-lg">
               Membros
             </h2>
-            <div className="flex justify-center items-center bg-neutral-200 dark:bg-blue-600 rounded-md w-5 h-5 text-xs font-black text-muted-foreground dark:text-white">
+            <div className="size-5 flex justify-center items-center rounded-full font-sans text-[11px] font-extrabold bg-neutral-200 dark:bg-blue-600 border border-neutral-400 dark:border-none">
               {total}
             </div>
           </div>

@@ -28,7 +28,7 @@ export const TaskDetails = ({ task }: TaskDetailsProps) => {
   }
 
   return (
-    <div className="p-6 flex flex-1 flex-col gap-y-3 h-max rounded-xl bg-neutral-100">
+    <div className="p-6 flex flex-1 flex-col gap-y-3 h-max rounded-xl bg-neutral-100 dark:bg-[#1A1A1A]">
       <div>
         <Select
           disabled={isUpdatingTask}
@@ -36,7 +36,7 @@ export const TaskDetails = ({ task }: TaskDetailsProps) => {
           onValueChange={(value) => handleUpdateStatus(value)}
         >
           <SelectTrigger className={cn(
-            "w-full flex-1 lg:w-auto h-10! text-base data-[placeholder]:text-white! rounded-md bg-blue-600 text-white font-semibold focus-visible:ring-0 cursor-pointer",
+            "w-full flex-1 lg:w-auto h-10! text-base data-[placeholder]:text-white! rounded-md bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-semibold focus-visible:ring-0 cursor-pointer",
           )}>
             <div className="pr-2 flex items-center gap-x-2">
               <SelectValue placeholder="Todos os status" className="placeholder:text-muted-foreground" />
@@ -71,7 +71,7 @@ export const TaskDetails = ({ task }: TaskDetailsProps) => {
             </div>
             <div className="flex items-center gap-x-1">
               <p className="text-sm text-muted-foreground">
-                Deverá ser entregue em {format(task.dueDate, "dd/MM/yyyy", { locale: ptBR })}
+                Deverá ser entregue até {format(task.dueDate, "dd/MM/yyyy", { locale: ptBR })}
               </p>
             </div>
           </div>

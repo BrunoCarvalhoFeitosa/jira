@@ -16,7 +16,7 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
           {task.name}
         </p>
         <TaskActions id={task.$id} projectId={task.projectId}>
-          <MoreHorizontalIcon className="size-[18px] stroke-1 shrink-0 text-neutral-300 cursor-pointer" />
+          <MoreHorizontalIcon className="size-[22px] stroke-1 shrink-0 text-neutral-500 cursor-pointer" />
         </TaskActions>
       </div>
       <div className="w-full h-[1px] bg-neutral-200" />

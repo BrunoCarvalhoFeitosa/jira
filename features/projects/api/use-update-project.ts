@@ -44,7 +44,7 @@ export const useUpdateProject = () => {
       queryClient.invalidateQueries({ queryKey: ["project", data.$id] })
     },
     onError: () => {
-      toast.error('Oops, erro ao atualizar projeto.', {
+      toast.error("Oops, erro ao atualizar projeto.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

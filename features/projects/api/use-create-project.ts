@@ -40,7 +40,7 @@ export const useCreateProject = () => {
       queryClient.invalidateQueries({ queryKey: ["projects"] })
     },
     onError: () => {
-      toast.error('Oops, erro ao criar novo projeto.', {
+      toast.error("Oops, erro ao criar novo projeto.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

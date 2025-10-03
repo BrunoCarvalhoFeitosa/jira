@@ -44,7 +44,7 @@ export const useResetInviteCode = () => {
       queryClient.invalidateQueries({ queryKey: ["workspace", data.$id] })
     },
     onError: () => {
-      toast.error('Oops, erro ao resetar código de convite.', {
+      toast.error("Oops, erro ao resetar código de convite.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

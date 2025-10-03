@@ -4,11 +4,11 @@ import { FaAtlassian } from "react-icons/fa"
 
 export const Footer = () => {
   return (
-    <footer className="w-full pt-4 bg-white dark:bg-black">
-      <div className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-32 px-6 md:px-16 lg:px-24 xl:px-24 text-white/75 bg-blue-700 bg-clip-path">
+    <footer className="w-full pt-8 lg:pt-16 bg-white dark:bg-black">
+      <div className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-36 px-6 md:px-16 lg:px-24 xl:px-24 text-white/75 bg-blue-700 dark:bg-[#111] bg-clip-path">
         <div className="flex flex-col lg:flex-row lg:flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
           <div className="flex justify-center lg:justify-start items-center lg:items-baseline flex-col lg:flex-1">
-            <div className="w-20 h-16 md:w-20 md:h-16 bg-blue-900">
+            <div className="w-20 h-16 md:w-20 md:h-16 bg-blue-900 dark:bg-blue-700">
               <Link
                 href="https://www.atlassian.com/br"
                 className="flex justify-center items-center w-full h-full"
@@ -25,7 +25,7 @@ export const Footer = () => {
             </p>
           </div>
           <div className="mt-6 md:mt-0 w-full lg:w-auto flex justify-center items-center flex-col text-center md:text-base">
-            <h5 className="text-slate-100 font-semibold">
+            <h5 className="text-white font-semibold">
               Produtos
             </h5>
             <ul className="mt-2 space-y-2">
@@ -57,7 +57,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="w-full lg:w-auto flex justify-center items-center flex-col text-center md:text-base">
-            <p className="text-slate-100 font-semibold">
+            <p className="text-white font-semibold">
               Institucional
             </p>
             <ul className="mt-2 space-y-2">
@@ -89,7 +89,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="w-full lg:w-auto flex justify-center items-center flex-col text-center md:text-base">
-            <p className="text-slate-100 font-semibold">
+            <p className="text-white font-semibold">
               Recursos
             </p>
             <ul className="mt-2 space-y-2">
@@ -122,7 +122,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10 flex items-center">
+      <div className="mt-10 lg:mt-16 flex items-center">
         <div className="flex-1 h-[6px] bg-blue-400" />
         <div className="flex-1 h-[6px] bg-blue-600" />
         <div className="flex-1 h-[6px] bg-blue-800" />

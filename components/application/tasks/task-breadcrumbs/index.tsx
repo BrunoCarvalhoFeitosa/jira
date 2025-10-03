@@ -108,7 +108,7 @@ export const TaskBreadcrumbs = ({ project, task }: TaskBreadcrumbsProps) => {
                 className="relative has-[>svg]:px-0 gap-1 hover:bg-transparent md:text-xs cursor-pointer"
               >
                 <EyeIcon className="size-6" />
-                <div className="absolute -right-2 -top-0.5 size-5 flex justify-center items-center rounded-full font-sans text-[11px] font-extrabold bg-neutral-200 border border-neutral-400">
+                <div className="absolute -right-2 -top-0.5 size-5 flex justify-center items-center rounded-full font-sans text-[11px] font-extrabold bg-neutral-200 dark:bg-blue-600 border border-neutral-400 dark:border-none">
                   {members?.total}
                 </div>
               </Button>
@@ -147,7 +147,7 @@ export const TaskBreadcrumbs = ({ project, task }: TaskBreadcrumbsProps) => {
           <Button
             disabled={isDeletingTask}
             variant="ghost"
-            className="w-10 has-[>svg]:px-0 bg-neutral-100 hover:bg-red-500 hover:text-white cursor-pointer"
+            className="w-10 has-[>svg]:px-0 bg-neutral-100 dark:bg-red-500 dark:hover:bg-red-600 hover:bg-red-500 hover:text-white cursor-pointer"
             onClick={handleDeleteTask}
           >
             <Trash2Icon className="size-5" />

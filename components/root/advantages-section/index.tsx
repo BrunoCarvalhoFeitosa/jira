@@ -17,7 +17,7 @@ export const AdvantagesSection = () => {
       ),
     },
     {
-      title: "Fluxo de trabalho personalizado",
+      title: "Fluxo de trabalho organizado",
       content: (
         <div>
           <p className="mb-3 font-normal text-neutral-800 dark:text-neutral-200">
@@ -30,7 +30,7 @@ export const AdvantagesSection = () => {
       ),
     },
     {
-      title: "Integração com outras ferramentas",
+      title: "Integração com softwares",
       content: (
         <div>
           <p className="mb-3 font-normal text-neutral-800 dark:text-neutral-200">
@@ -43,7 +43,7 @@ export const AdvantagesSection = () => {
       ),
     },
     {
-      title: "Relatórios e análises diversificadas",
+      title: "Relatórios e análises",
       content: (
         <div>
           <p className="mb-3 font-normal text-neutral-800 dark:text-neutral-200">
@@ -56,7 +56,7 @@ export const AdvantagesSection = () => {
       ),
     },
     {
-      title: "Automatização de processos internos",
+      title: "Automatização de processos",
       content: (
         <div>
           <p className="mb-3 font-normal text-neutral-800 dark:text-neutral-200">
@@ -69,7 +69,7 @@ export const AdvantagesSection = () => {
       ),
     },
     {
-      title: "Escalabilidade e flexibilidade do projeto",
+      title: "Escalabilidade e flexibilidade",
       content: (
         <div>
           <p className="mb-3 font-normal text-neutral-800 dark:text-neutral-200">
@@ -82,7 +82,7 @@ export const AdvantagesSection = () => {
       ),
     },
     {
-      title: "Colaboração e comunicação entre equipes",
+      title: "Colaboração e comunicação",
       content: (
         <div>
           <p className="mb-3 font-normal text-neutral-800 dark:text-neutral-200">
@@ -95,7 +95,7 @@ export const AdvantagesSection = () => {
       ),
     },
     {
-      title: "Controle de permissões e segurança",
+      title: "Controle de permissões",
       content: (
         <div>
           <p className="mb-3 font-normal text-neutral-800 dark:text-neutral-200">
@@ -110,7 +110,7 @@ export const AdvantagesSection = () => {
   ]
 
   return (
-    <section className="relative pb-20 w-full bg-white dark:bg-[#151515] overflow-clip">
+    <section className="relative pb-0 w-full bg-white dark:bg-[#151515] overflow-clip">
       <Timeline data={data} />
     </section>
   )

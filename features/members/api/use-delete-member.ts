@@ -40,7 +40,7 @@ export const useDeleteMember = () => {
       queryClient.invalidateQueries({ queryKey: ["members"] })
     },
     onError: () => {
-      toast.error('Oops, erro ao remover membro.', {
+      toast.error("Oops, erro ao remover membro.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

@@ -40,7 +40,7 @@ export const useBulkUpdateTasks = () => {
       queryClient.invalidateQueries({ queryKey: ["tasks"] })
     },
     onError: () => {
-      toast.error('Oops, erro ao atualizar tarefa.', {
+      toast.error("Oops, erro ao atualizar tarefa.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

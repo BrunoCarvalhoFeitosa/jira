@@ -1,5 +1,6 @@
 "use client"
 import { usePathname } from "next/navigation"
+import { ThemeSwitch } from "@/components/root/theme-switch"
 import { UserButton } from "@/components/auth/user-button"
 import { MobileSidebar } from "../mobile-sidebar"
 
@@ -44,7 +45,10 @@ export const Navbar = () => {
         </p>
       </div>
       <MobileSidebar />
-      <UserButton />
+      <div className="flex items-center">
+        <ThemeSwitch context="application" />
+        <UserButton />
+      </div>
     </nav>
   )
 }

@@ -43,7 +43,7 @@ export const useRegister = () => {
       queryClient.invalidateQueries({ queryKey: ["current"] })
     },
     onError: () => {
-      toast.error('Oops, e-mail ou senha incorretos.', {
+      toast.error("Oops, e-mail ou senha incorretos.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

@@ -42,7 +42,7 @@ export const useLogout = () => {
       queryClient.invalidateQueries({ queryKey: ["workspaces"] })
     },
     onError: () => {
-      toast.error('Oops, erro ao sair de sua conta.', {
+      toast.error("Oops, erro ao sair de sua conta.", {
         style: {
           '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
           '--normal-text': 'var(--destructive)',

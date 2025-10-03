@@ -43,10 +43,10 @@ export const CardsSection = () => {
   ]
 
   return (
-    <div className="pt-16 md:pt-20 pb-10 bg-linear-to-b from-blue-300 from-30% to-70% to-blue-600/90 dark:bg-[#222]">
-      <h3 className="mb-4 text-md md:text-2xl font-semibold text-center text-white">
+    <section className="pt-16 md:pt-20 pb-10 bg-linear-to-b from-blue-300 from-30% to-70% to-blue-600/90 dark:from-[#111] dark:to-[#2C2C2C]">
+      <h3 className="mb-4 text-md md:text-3xl font-thin text-center text-white">
         Arraste os cards e veja <br />
-        <span className="text-[26px] md:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem] font-bold mt-1 leading-none">
+        <span className="text-[22px] md:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem] font-bold mt-1 leading-none">
           Todas as vantagens de uso
         </span>
       </h3>
@@ -69,6 +69,6 @@ export const CardsSection = () => {
             </DraggableCardBody>
           ))}
         </DraggableCardContainer>
-    </div>
+    </section>
   )
 }

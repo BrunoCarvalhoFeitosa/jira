@@ -5,6 +5,8 @@ import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id"
 import { Card, CardContent } from "@/components/ui/card"
 import { CreateTaskForm } from "../create-task-form"
 import { RiLoader4Fill } from "react-icons/ri"
+import { Project } from "@/features/projects/types"
+import { Member } from "@/features/members/types"
 
 interface CreateTaskFormWrapperProps {
   onCancel: () => void
@@ -15,13 +17,13 @@ export const CreateTaskFormWrapper = ({ onCancel }: CreateTaskFormWrapperProps) 
   const { data: projects, isLoading: isLoadingProjects } = useGetProjects({ workspaceId })
   const { data: members, isLoading: isLoadingMembers } = useGetMembers({ workspaceId })
 
-  const projectOptions = projects?.documents.map((project) => ({
+  const projectOptions = projects?.documents.map((project: Project) => ({
     id: project.$id,
     name: project.name,
     imageUrl: project.imageUrl
   }))
 
-  const memberOptions = members?.documents.map((member) => ({
+  const memberOptions = members?.documents.map((member: Member) => ({
     id: member.$id,
     name: member.name,
   }))

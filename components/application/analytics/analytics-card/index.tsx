@@ -1,4 +1,5 @@
 "use client"
+import CountUp from "react-countup"
 import { cn } from "@/lib/utils"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { FaCaretDown, FaCaretUp } from "react-icons/fa"
@@ -32,7 +33,10 @@ export const AnalyticsCard = ({ title, value, variant, increaseValue }: Analytic
           </div>
         </div>
         <CardTitle className="text-xl font-semibold">
-          {value}
+          <CountUp
+            start={0}
+            end={value}
+          />
         </CardTitle>
       </CardHeader>
     </Card>

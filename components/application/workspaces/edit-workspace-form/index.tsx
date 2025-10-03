@@ -1,5 +1,6 @@
 "use client"
 import { useRef } from "react"
+import emailjs from "@emailjs/browser"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -10,7 +11,7 @@ import { useUpdateWorkspace } from "@/features/workspaces/api/use-update-workspa
 import { useDeleteWorkspace } from "@/features/workspaces/api/use-delete-workspaces"
 import { useResetInviteCode } from "@/features/workspaces/api/use-reset-invite-code"
 import { useConfirm } from "@/features/hooks/use-confirm"
-import { updateWorkspaceSchema } from "@/features/workspaces/schemas"
+import { inviteSchema, updateWorkspaceSchema } from "@/features/workspaces/schemas"
 import { Workspace } from "../../../../features/workspaces/types"
 import Image from "next/image"
 import { getDate } from "@/utils"
@@ -30,12 +31,13 @@ interface EditWorkspaceFormProps {
 }
 
 export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceFormProps) => {
+  const formRef = useRef<HTMLFormElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
   const { mutate, isPending } = useUpdateWorkspace()
   const { mutate: deleteWorkspace, isPending: isDeletingWorkspace } = useDeleteWorkspace()
   const { mutate: resetInviteCode, isPending: isResettingInviteCode } = useResetInviteCode()
-  const fullInviteLink = `${window.location.origin}/workspaces/${initialValues.$id}/join/${initialValues.inviteCode}`
+  const inviteLink = `http://localhost:3000/workspaces/${initialValues.$id}/join/${initialValues.inviteCode}`
 
   const [ DeleteDialog, confirmDelete ] = useConfirm(
     "Deletar espaço de trabalho",
@@ -47,7 +49,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
     "Esta ação fará com que o link atual não seja mais válido, tem certeza que deseja prosseguir?"
   )
 
-  const form = useForm<z.infer<typeof updateWorkspaceSchema>>({
+  const editForm = useForm<z.infer<typeof updateWorkspaceSchema>>({
     resolver: zodResolver(updateWorkspaceSchema),
     defaultValues: {
       ...initialValues,
@@ -55,11 +57,20 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
     }
   })
 
+  const inviteForm = useForm<z.infer<typeof inviteSchema>>({
+    resolver: zodResolver(inviteSchema),
+    defaultValues: {
+      projectName: initialValues.name,
+      inviteLink,
+      email: ""
+    }
+  })
+
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event?.target?.files?.[0]
 
     if (file) {
-      form.setValue("imageUrl", file)
+      editForm.setValue("imageUrl", file)
     }
   }
 
@@ -87,7 +98,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
     }) 
   }
 
-  const onSubmit = (values: z.infer<typeof updateWorkspaceSchema>) => {
+  const onSubmitEditWorkspace = (values: z.infer<typeof updateWorkspaceSchema>) => {
     const finalValues = {
       ...values,
       imageUrl: values.imageUrl instanceof File ? values.imageUrl : ""
@@ -98,28 +109,51 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
       param: { workspaceId: initialValues.$id }
     }, {
       onSuccess: ({ data }) => {
-        form.reset()
+        editForm.reset()
         router.push(`/workspaces/${data.$id}`)
       }
     })
   }
 
-  const handleCopyInviteCode = () => {
-    navigator.clipboard.writeText(fullInviteLink)
-      .then(() => {
-        toast("Código de convite copiado com sucesso.", {
-          description: getDate(),
-          action: {
-            label: "Fechar",
-            onClick: () => console.log("Undo"),
-          },
-          style: {
-            '--normal-bg': 'color-mix(in oklab, light-dark(var(--color-blue-400), var(--color-blue-200)) 10%, var(--background))',
-            '--normal-text': 'light-dark(var(--color-blue-400), var(--color-blue-200))',
-            '--normal-border': 'light-dark(var(--color-blue-400), var(--color-blue-200))'
-          } as React.CSSProperties
-        })
+  const onSubmitEmail = (data: z.infer<typeof inviteSchema>) => {
+    if (!formRef.current) {
+      console.error("Form reference is undefined.")
+      return
+    }
+
+    emailjs.sendForm(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      formRef.current, {
+        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       })
+      .then(
+        () => {
+          inviteForm.resetField("email")
+          toast("E-mail enviado com sucesso.", {
+            description: getDate(),
+            action: {
+              label: "Fechar",
+              onClick: () => console.log("Undo"),
+            },
+            style: {
+              '--normal-bg': 'color-mix(in oklab, light-dark(var(--color-blue-400), var(--color-blue-200)) 10%, var(--background))',
+              '--normal-text': 'light-dark(var(--color-blue-400), var(--color-blue-200))',
+              '--normal-border': 'light-dark(var(--color-blue-400), var(--color-blue-200))'
+            } as React.CSSProperties
+          })
+        },
+        (error) => {
+          console.error("Error while send e-mail invite", error.text)
+          toast.error("Oops, falha ao enviar convite por e-mail.", {
+            style: {
+              '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',
+              '--normal-text': 'var(--destructive)',
+              '--normal-border': 'var(--destructive)'
+            } as React.CSSProperties
+          })
+        },
+      )
   }
   
   return (
@@ -147,11 +181,11 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
           </div>
         </CardHeader>
         <CardContent className="relative px-0 z-10">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <Form {...editForm}>
+            <form onSubmit={editForm.handleSubmit(onSubmitEditWorkspace)} className="space-y-4">
               <div className="flex flex-col gap-4">
                 <FormField
-                  control={form.control}
+                  control={editForm.control}
                   name="imageUrl"
                   render={({ field }) => (
                     <div className="w-full flex flex-col items-center gap-2">
@@ -180,7 +214,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                               )}
                               <div>
                                 <h1 className="text-xl font-semibold">
-                                  {form.watch("name")}
+                                  {editForm.watch("name")}
                                 </h1>
                               </div>
                             </div>
@@ -247,7 +281,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                   )}
                 />
                 <FormField
-                  control={form.control}
+                  control={editForm.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem className="flex-1">
@@ -302,28 +336,28 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
         </div>
         <CardHeader className="relative px-0 flex flex-col z-10">
           <CardTitle className="text-xl font-semibold">
-            Convide membros
+            Resete o link de convite
           </CardTitle>
           <CardDescription className="text-base dark:text-white">
-            Use este link para convidar novos membros a este espaço de trabalho.
+            Compartilhe este link para convidar novos membros a este espaço de trabalho.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-0 relative z-10">
           <div className="relative flex items-center">
             <Input
               disabled
-              value={fullInviteLink}
+              value={inviteLink}
               className="pr-12 h-10 bg-white dark:opacity-100 focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300 truncate"
             />
             <Button
-              type="button"
+              type="submit"
               variant="ghost"
               className="absolute right-0 hover:bg-transparent cursor-pointer"
-              onClick={handleCopyInviteCode}
             >
               <CopyIcon className="w-4 h-4" />
             </Button>
           </div>
+          
           <div className="mt-5 flex justify-end">
             <Button
               disabled={isPending || isResettingInviteCode}
@@ -335,6 +369,91 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
               Resetar link de convite
             </Button>
           </div>
+        </CardContent>
+      </Card>
+      <Card className="relative p-6 w-full h-full border-none rounded-md shadow-none bg-gray-50 dark:bg-[#111]">
+        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] h-[80px]">
+          <GridPattern />
+        </div>
+        <CardHeader className="relative px-0 flex flex-col z-10">
+          <CardTitle className="text-xl font-semibold">
+            Convide membros por e-mail
+          </CardTitle>
+          <CardDescription className="text-base dark:text-white">
+            Envie um e-mail ao novo convidado para que ele faça parte deste espaço de trabalho.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-0 relative z-10">
+           <Form {...inviteForm}>
+            <form ref={formRef} onSubmit={inviteForm.handleSubmit(onSubmitEmail)} className="space-y-4">
+              <div className="flex flex-col gap-4">
+                <FormField
+                  control={inviteForm.control}
+                  name="projectName"
+                  render={({ field }) => (
+                    <FormItem className="hidden flex-1">
+                      <Input
+                        {...field}
+                        value={initialValues.name}
+                        className="hidden pr-12 h-10 bg-white dark:opacity-100 focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300 truncate"
+                      />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={inviteForm.control}
+                  name="inviteLink"
+                  render={({ field }) => (
+                    <FormItem className="hidden flex-1">
+                      <div className="relative items-center">
+                        <Input
+                          {...field}
+                          value={inviteLink}
+                          className="pr-12 h-10 bg-white dark:opacity-100 focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300 truncate"
+                        />
+                        <Button
+                          type="submit"
+                          variant="ghost"
+                          className="absolute right-0 hover:bg-transparent cursor-pointer"
+                        >
+                          <CopyIcon className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={inviteForm.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem className="flex-1">
+                      <FormLabel>
+                        E-mail do convidado
+                      </FormLabel>
+                      <Input
+                        {...field}
+                        type="email"
+                        className="pr-12 h-10 bg-white dark:opacity-100 focus-visible:border-gray-200 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-300 truncate"
+                        placeholder="Insira o e-mail do convidado"
+                      />
+                      <FormMessage className="font-semibold" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="mt-5 flex justify-end">
+            <Button
+              disabled={isPending || isResettingInviteCode}
+              type="submit"
+              variant="default"
+              className="md:w-[240px] h-10 text-base rounded-md bg-blue-600 hover:bg-blue-700 text-white transition cursor-pointer"
+            >
+              Enviar convite por e-mail
+            </Button>
+          </div>
+            </form>
+          </Form>
+          
         </CardContent>
       </Card>
     </div>

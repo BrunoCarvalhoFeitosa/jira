@@ -18,7 +18,7 @@ export const CarouselSection = () => {
         ]}
       >
         <CarouselContent>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -38,7 +38,7 @@ export const CarouselSection = () => {
               </Card>
             </div>
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -58,7 +58,7 @@ export const CarouselSection = () => {
               </Card>
             </div>
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -78,7 +78,7 @@ export const CarouselSection = () => {
               </Card>
             </div>
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -98,7 +98,7 @@ export const CarouselSection = () => {
               </Card>
             </div>
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -118,7 +118,7 @@ export const CarouselSection = () => {
               </Card>
             </div>
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -138,7 +138,7 @@ export const CarouselSection = () => {
               </Card>
             </div>
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -158,7 +158,7 @@ export const CarouselSection = () => {
               </Card>
             </div>
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[432px] border-none shadow-none rounded-0 cursor-grab">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 max-h-[424px] border-none shadow-none rounded-0 cursor-grab">
             <div className="p-1">
               <Card className="bg-gray-50 dark:bg-[#1E1E1E]">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
