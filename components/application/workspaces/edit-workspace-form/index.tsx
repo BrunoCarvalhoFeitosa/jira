@@ -37,7 +37,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
   const { mutate, isPending } = useUpdateWorkspace()
   const { mutate: deleteWorkspace, isPending: isDeletingWorkspace } = useDeleteWorkspace()
   const { mutate: resetInviteCode, isPending: isResettingInviteCode } = useResetInviteCode()
-  const inviteLink = `http://localhost:3000/workspaces/${initialValues.$id}/join/${initialValues.inviteCode}`
+  const inviteLink = `https://bruno-carvalho-feitosa-jira.vercel.app/workspaces/${initialValues.$id}/join/${initialValues.inviteCode}`
 
   const [ DeleteDialog, confirmDelete ] = useConfirm(
     "Deletar espaço de trabalho",
