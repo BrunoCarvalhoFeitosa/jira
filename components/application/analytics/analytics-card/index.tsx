@@ -36,6 +36,7 @@ export const AnalyticsCard = ({ title, value, variant, increaseValue }: Analytic
           <CountUp
             start={0}
             end={value}
+            delay={2}
           />
         </CardTitle>
       </CardHeader>

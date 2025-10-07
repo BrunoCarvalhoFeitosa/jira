@@ -5,15 +5,16 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { useRegister } from "@/features/auth/api/use-register"
+import { signUpWithGitHub, signUpWithGoogle } from "@/lib/oauth"
 import { registerSchema } from "@/features/auth/schemas"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { FcGoogle } from "react-icons/fc"
-import { FaFacebook, FaLock, FaUnlock } from "react-icons/fa6"
+import { FaGithub, FaLock, FaUnlock } from "react-icons/fa6"
 import { MdEmail, MdArrowRightAlt } from "react-icons/md"
 import { IoFingerPrintSharp } from "react-icons/io5"
-import { BiSolidUser } from "react-icons/bi"
+import { BiSolidUser } from "react-icons/bi"  
 
 export const SignUpCard = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
@@ -82,6 +83,7 @@ export const SignUpCard = () => {
                     </FormLabel>
                     <Input
                       type="text"
+                      autoComplete="off"
                       placeholder="Insira seu nome completo"
                       className="pl-12 h-12 rounded-md border-none border-b-[1px] bg-white border-b-gray-100 shadoway-50 focus-visible:border-0 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-400 text-base md:text-base font-semibold"
                       {...field}
@@ -104,6 +106,7 @@ export const SignUpCard = () => {
                     </FormLabel>
                     <Input
                       type="email"
+                      autoComplete="off"
                       placeholder="Insira seu e-mail corporativo"
                       className="pl-12 h-12 rounded-md border-none border-b-[1px] bg-white border-b-gray-100 shadoway-50 focus-visible:border-0 focus-visible:ring-0 placeholder:text-base placeholder:text-gray-400 text-base md:text-base font-semibold"
                       {...field}
@@ -196,16 +199,18 @@ export const SignUpCard = () => {
                 type="button"
                 variant="outline"
                 className="has-[>svg]:px-0 flex justify-center items-center w-12 h-12 rounded-full bg-white border-gray-50 cursor-pointer"
+                onClick={() => signUpWithGoogle()}
               >
-                <FcGoogle className="w-6 h-6" />
+                <FcGoogle className="size-6" />
               </Button>
               <Button
                 disabled={isPending}
                 type="button"
                 variant="outline"
                 className="has-[>svg]:px-0 flex justify-center items-center w-12 h-12 rounded-full bg-white border-gray-50 cursor-pointer"
+                onClick={() => signUpWithGitHub()}
               >
-                <FaFacebook className="w-6 h-6 text-blue-600" />
+                <FaGithub className="size-7 text-blue-600" />
               </Button>
             </div>
           </div>
