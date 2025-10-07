@@ -37,6 +37,8 @@ export const useBulkUpdateTasks = () => {
           '--normal-border': 'light-dark(var(--color-blue-400), var(--color-blue-200))'
         } as React.CSSProperties
       })
+      queryClient.invalidateQueries({ queryKey: ["project-analytics"] })
+      queryClient.invalidateQueries({ queryKey: ["workspace-analytics"] })
       queryClient.invalidateQueries({ queryKey: ["tasks"] })
     },
     onError: () => {
