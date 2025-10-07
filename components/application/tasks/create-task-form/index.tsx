@@ -140,7 +140,7 @@ export const CreateTaskForm = ({ onCancel, projectOptions, memberOptions }: Crea
                             key={member.id}
                             value={member.id}
                           >
-                            <div className="flex items-center gap-x-2">
+                            <div>
                               <MemberAvatar
                                 className="size-6"
                                 name={member.name}
