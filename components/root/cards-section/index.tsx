@@ -13,32 +13,32 @@ export const CardsSection = () => {
     {
       title: "Crie sprints",
       image: "/images/root/cards/card-image-02.jpg",
-      className: "absolute top-40 left-[13%] rotate-[-7deg]",
+      className: "absolute top-40 left-[13%] 2xl:left-[20%] rotate-[-7deg]",
     },
     {
       title: "Trace metas",
       image: "/images/root/cards/card-image-03.jpg",
-      className: "absolute top-20 left-[22%] rotate-[8deg]",
+      className: "absolute top-20 left-[22%] 2xl:left-[33%] rotate-[8deg]",
     },
     {
       title: "Tenha visibilidade do time",
       image: "/images/root/cards/card-image-04.jpg",
-      className: "absolute top-32 left-[40%] rotate-[10deg]",
+      className: "absolute top-32 left-[40%] 2xl:left-[47%] rotate-[10deg]",
     },
     {
       title: "Gere relatórios",
       image: "/images/root/cards/card-image-05.jpg",
-      className: "absolute top-20 right-[28%] rotate-[2deg]",
+      className: "absolute top-20 right-[28%] 2xl:right-[25%] rotate-[2deg]",
     },
     {
       title: "Crie campanhas",
       image: "/images/root/cards/card-image-06.jpg",
-      className: "absolute top-24 left-[62%] rotate-[-7deg]",
+      className: "absolute top-24 left-[62%] 2xl:left-[72%] rotate-[-7deg]",
     },
     {
       title: "Defina estratégias",
       image: "/images/root/cards/card-image-07.jpg",
-      className: "absolute top-8 left-[70%] rotate-[4deg]",
+      className: "absolute top-8 left-[70%] 2xl:left-[80%] rotate-[4deg]",
     },
   ]
 
