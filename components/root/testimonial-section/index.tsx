@@ -4,7 +4,7 @@ import { AnimatedPointerJira } from "../common/animated-pointer-jira"
 
 export const TestimonialSection = () => {
   return (
-    <section className="pt-10 px-5 md:px-12 pb-28 w-full max-w-7xl mx-auto">
+    <section className="pt-10 px-5 md:px-12 pb-28 w-full max-w-7xl 2xl:max-w-[95%] mx-auto">
       <div className="w-full flex justify-end">
         <h3 className="mb-4 text-2xl md:text-4xl xl:text-6xl font-thin text-black dark:text-white max-w-5xl text-end">
           Veja os relatos positivos e <br />
@@ -14,7 +14,7 @@ export const TestimonialSection = () => {
         </h3>
       </div>
       <div className="w-full flex justify-end">
-        <div className="mt-6 lg:max-w-[980px] flex flex-col lg:flex-row items-center gap-5">
+        <div className="mt-6 lg:max-w-[980px] 2xl:max-w-[1480px] flex flex-col lg:flex-row items-center gap-5">
           <div className="flex flex-1 flex-col gap-y-5">
             <p>
               Desde que começamos a usar o Jira na nossa equipe, a organização e o acompanhamento das tarefas melhoraram significativamente. A interface é intuitiva e as funcionalidades se adaptam bem às nossas necessidades. A visualização em kanban nos ajuda a entender rapidamente o andamento dos projetos.

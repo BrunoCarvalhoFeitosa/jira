@@ -50,7 +50,7 @@ export const CardsSection = () => {
           Todas as vantagens de uso
         </span>
       </h3>
-      <DraggableCardContainer className="relative min-h-[85dvh] flex md:min-h-[65dvh] lg:min-h-[48dvh] xl:min-h-screen w-full items-center justify-center overflow-clip">
+      <DraggableCardContainer className="relative min-h-[85dvh] flex md:min-h-[65dvh] lg:min-h-[48dvh] xl:min-h-screen 2xl:min-h-[78dvh] w-full items-center justify-center overflow-clip">
           <p className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-bold text-black md:text-4xl">
             Organize pessoas, processos e tarefas.
           </p>
