@@ -112,6 +112,11 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -162,6 +167,19 @@
 		background-size: 100% 2px;
 		background-position: 0 100%;
 	}
+
+  .marquee-inner {
+    animation: marqueeScroll 25s linear infinite;
+    animation-play-state: running;
+  }
+
+  .marquee-inner:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-reverse {
+    animation-direction: reverse;
+  }
 
   .hide-scrollbar {
     -ms-overflow-style: none;

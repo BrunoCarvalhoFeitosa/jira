@@ -4,8 +4,8 @@ import { FaAtlassian } from "react-icons/fa"
 
 export const Footer = () => {
   return (
-    <footer className="w-full pt-8 lg:pt-16 bg-white dark:bg-black">
-      <div className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-36 px-6 md:px-16 lg:px-24 xl:px-24 text-white/75 bg-blue-700 dark:bg-[#111] bg-clip-path">
+    <footer className="w-full bg-white dark:bg-black">
+      <div className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-28 px-6 md:px-16 lg:px-24 xl:px-24 text-white/75 bg-blue-700 dark:bg-[#090909]">
         <div className="flex flex-col lg:flex-row lg:flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
           <div className="flex justify-center lg:justify-start items-center lg:items-baseline flex-col lg:flex-1">
             <div className="w-20 h-16 md:w-20 md:h-16 bg-blue-900 dark:bg-blue-700">
@@ -18,13 +18,13 @@ export const Footer = () => {
               </Link>
             </div>
             <p className="mt-3 text-center lg:text-left">
-              Especialista em desenvolimento de software para gestão empresarial.
+              Especialista em desenvolvimento de software para gestão empresarial.
             </p>
             <p className="mt-3 text-center lg:text-left">
               Copyright © 2025 Atlassian.
             </p>
           </div>
-          <div className="mt-6 md:mt-0 w-full lg:w-auto flex justify-center items-center flex-col text-center md:text-base">
+          <div className="w-full lg:w-auto flex justify-center items-center flex-col text-center md:text-base">
             <h5 className="text-white font-semibold">
               Produtos
             </h5>
@@ -122,9 +122,9 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10 lg:mt-16 flex items-center">
+      <div className="flex items-center">
+        <div className="flex-1 h-[6px] bg-blue-300" />
         <div className="flex-1 h-[6px] bg-blue-400" />
-        <div className="flex-1 h-[6px] bg-blue-600" />
         <div className="flex-1 h-[6px] bg-blue-800" />
         <div className="flex-1 h-[6px] bg-blue-950" />
       </div>

@@ -9,7 +9,7 @@ import { AiFillAndroid } from "react-icons/ai"
 
 export const DownloadSection = () => {
   return (
-    <section className="w-full flex flex-col overflow-hidden bg-blue-600 dark:bg-[#353535]">
+    <section className="w-full flex flex-col overflow-hidden bg-blue-600 dark:bg-[#0F0F0F]">
       <ContainerScroll
         titleComponent={
           <>

@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   },
   images: {
     domains: [
-      "nyc.cloud.appwrite.io"
+      "nyc.cloud.appwrite.io",
+      "images.unsplash.com"
     ]
   }
 }
