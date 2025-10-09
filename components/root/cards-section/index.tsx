@@ -23,7 +23,7 @@ export const CardsSection = () => {
     {
       title: "Tenha visibilidade do time",
       image: "/images/root/cards/card-image-04.jpg",
-      className: "absolute top-32 left-[40%] 2xl:left-[47%] rotate-[10deg]",
+      className: "absolute top-32 2xl:top-44 left-[40%] 2xl:left-[47%] rotate-[10deg]",
     },
     {
       title: "Gere relatórios",
