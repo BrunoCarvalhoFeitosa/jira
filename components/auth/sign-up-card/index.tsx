@@ -210,7 +210,7 @@ export const SignUpCard = () => {
                 className="has-[>svg]:px-0 flex justify-center items-center w-12 h-12 rounded-full bg-white border-gray-50 cursor-pointer"
                 onClick={() => signUpWithGitHub()}
               >
-                <FaGithub className="size-7 text-blue-600" />
+                <FaGithub className="size-7 text-black" />
               </Button>
             </div>
           </div>
