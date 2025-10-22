@@ -29,7 +29,7 @@ export const useDeleteMember = () => {
         description: getDate(),
         action: {
           label: "Fechar",
-          onClick: () => console.log("Undo"),
+          onClick: () => console.log("Undo")
         },
         style: {
           '--normal-bg': 'color-mix(in oklab, light-dark(var(--color-blue-400), var(--color-blue-200)) 10%, var(--background))',
