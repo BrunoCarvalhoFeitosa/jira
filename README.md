@@ -104,7 +104,7 @@ Primeiramente será necessário clonar este projeto em (https://github.com/Bruno
 
 1. Clone o repositório
    ```sh
-   git clone https://github.com/BrunoCarvalhoFeitosa/jira
+   git clone https://github.com/BrunoCarvalhoFeitosa/jira.git
    ```
 2. Instale os pacotes do NPM
    ```sh
